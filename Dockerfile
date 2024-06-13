@@ -1,5 +1,5 @@
 # Use an official Maven image with OpenJDK 17 to build the application
-FROM maven:3.8.7-openjdk-20-slim AS build
+FROM maven:3.8.7-openjdk-18-slim AS build
 WORKDIR /app
 
 # Copy the pom.xml and the source code
@@ -10,7 +10,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Use an official OpenJDK image to run the application
-FROM openjdk:20-slim
+FROM openjdk:18-ea-10-jdk-slim
 WORKDIR /app
 
 # Copy the JAR file from the build stage
