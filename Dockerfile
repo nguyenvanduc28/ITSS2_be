@@ -1,5 +1,5 @@
 # Use an official Maven image with OpenJDK 17 to build the application
-FROM maven:3.8.6-openjdk-17 AS build
+FROM maven:3.9.5-openjdk-21 AS build
 WORKDIR /app
 
 # Copy the pom.xml and the source code
