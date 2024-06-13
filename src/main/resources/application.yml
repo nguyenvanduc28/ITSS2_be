@@ -1,10 +1,14 @@
 
 spring:
   datasource:
-    url: ${SPRING_DATASOURCE_URL}
-    username: ${DATABASE_USERNAME}
-    password: ${DATABASE_PASSWORD}
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    url: ${SPRING_DATASOURCE_URL}
+    #    username: ${DATABASE_USERNAME}
+    #    password: ${DATABASE_PASSWORD}
+    #    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:postgresql://dpg-cplg7cocmk4c739o4vkg-a.singapore-postgres.render.com:5432/domdomdb
+    username: domdomroot
+    password: jETeW282VGdcn1K5Ln2yAz6vkTyZxSQP
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update
