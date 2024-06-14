@@ -42,7 +42,7 @@ public class NotiSchedule {
     private String formatEmailContent(Event event) {
         ZoneId zoneId = ZoneId.of("Asia/Ho_Chi_Minh");
         LocalDateTime startTime = LocalDateTime.ofEpochSecond(event.getStart() / 1000, 0, ZoneOffset.ofHours(7));
-        LocalDateTime endTime = LocalDateTime.ofEpochSecond(event.getEnd() / 1000, 0, ZoneOffset.ofHours(7));
+        LocalDateTime endTime = LocalDateTime.ofEpochSecond(event.getEndd() / 1000, 0, ZoneOffset.ofHours(7));
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm, dd-MM-yyyy");
 
