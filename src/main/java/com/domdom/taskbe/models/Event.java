@@ -21,8 +21,7 @@ public class Event extends BaseEntity{
     @Column(name = "all_day", columnDefinition = "boolean default false")
     private boolean allDay;
     private long start;
-    @Column(name = "\"end\"")
-    private long end;
+    private long endd;
     private long completeDate;
     private String description;
     private String status;

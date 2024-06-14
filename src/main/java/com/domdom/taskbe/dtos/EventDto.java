@@ -2,12 +2,8 @@ package com.domdom.taskbe.dtos;
 
 import com.domdom.taskbe.models.enums.Alert;
 import com.domdom.taskbe.models.enums.Repeat;
-import jakarta.persistence.Column;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Timestamp;
 
@@ -20,7 +16,7 @@ public class EventDto {
     private String title;
     private boolean allDay;
     private long start;
-    private long end;
+    private long endd;
     private long completeDate;
     private String description;
     private Repeat repeatType;
