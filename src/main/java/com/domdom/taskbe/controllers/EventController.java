@@ -1,6 +1,7 @@
 package com.domdom.taskbe.controllers;
 
 import com.domdom.taskbe.dtos.EventDto;
+import com.domdom.taskbe.dtos.MailNotiDto;
 import com.domdom.taskbe.dtos.ResponseObject;
 import com.domdom.taskbe.dtos.TimeRangerDto;
 import com.domdom.taskbe.services.event.EventService;
@@ -78,9 +79,9 @@ public class EventController {
                 .data(eventDtos)
                 .build());
     }
-    @GetMapping("/noti")
-    public ResponseEntity<ResponseObject> getEventsNoti() {
-        List<EventDto> eventDtos= eventService.getAllEventNoti();
+    @PostMapping("/noti")
+    public ResponseEntity<ResponseObject> getEventsNoti(@RequestBody @Valid MailNotiDto mailNotiDto) {
+        List<EventDto> eventDtos= eventService.getAllEventNoti(mailNotiDto.getEmail());
         return ResponseEntity.ok(ResponseObject.builder()
                 .responseCode(200)
                 .message("success")

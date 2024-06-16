@@ -59,11 +59,11 @@ public class EventService {
         long count = eventRepository.count(startDate, endDate);
         return count;
     }
-    public List<EventDto> getAllEventNoti(){
+    public List<EventDto> getAllEventNoti(String email){
         ZoneId zoneId = ZoneId.of("Asia/Ho_Chi_Minh");
         LocalDateTime now = LocalDateTime.now(zoneId);
         long startDate = now.toEpochSecond(ZoneOffset.ofHours(7)) * 1000 + 30*60000;
-        List<Event> events = eventRepository.findAllByStartDate(startDate);
+        List<Event> events = eventRepository.findAllByStartDateAndMail(startDate, email);
         List<Event> events1 = new ArrayList<>();
         for (Event event : events) {
             if ((event.getStart() - startDate) / 60000 == 0) {
